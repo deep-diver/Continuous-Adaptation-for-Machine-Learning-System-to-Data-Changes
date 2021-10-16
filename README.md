@@ -19,6 +19,7 @@ MLOps system evolves according to the changes of the world, and that is usually 
   - [X] FileListGen component
   - [X] BatchPredictionGen component
   - [X] PerformanceEvaluator component
+  - [ ] SpanPreparator component
   - [ ] PipelineTrigger component
 - [X] Data Preparation for Data/Concept Drift Simulation (from Bing)
 - [ ] Deploy Cloud Function, Schedule a Job to Trigger the Cloud Function
