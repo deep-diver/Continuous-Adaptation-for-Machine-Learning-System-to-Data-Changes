@@ -15,12 +15,12 @@ MLOps system evolves according to the changes of the world, and that is usually 
 ## Checklist
 - [X] Initial Data Preparation (CIFAR10)
 - [X] Build Training Pipeline
-- [ ] Build Batch Prediction Pipeline
+- [X] Build Batch Prediction Pipeline
   - [X] FileListGen component
   - [X] BatchPredictionGen component
   - [X] PerformanceEvaluator component
-  - [ ] SpanPreparator component
-  - [ ] PipelineTrigger component
+  - [X] SpanPreparator component
+  - [X] PipelineTrigger component
 - [X] Data Preparation for Data/Concept Drift Simulation (from Bing)
 - [ ] Deploy Cloud Function, Schedule a Job to Trigger the Cloud Function
 - [ ] End to End Test
