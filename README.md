@@ -23,4 +23,4 @@ MLOps system evolves according to the changes of the world, and that is usually 
   - [X] PipelineTrigger component
 - [X] Data Preparation for Data/Concept Drift Simulation (from Bing)
 - [X] Deploy Cloud Function, Schedule a Job to Trigger the Cloud Function
-- [ ] End to End Test
+- [X] End to End Test
