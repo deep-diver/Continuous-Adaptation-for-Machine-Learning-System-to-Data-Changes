@@ -9,6 +9,7 @@ import google.cloud.aiplatform as vertex_ai
 from typing import Union, Sequence
 from absl import logging
 
+
 @component
 def BatchPredictionGen(
     gcs_source: InputArtifact[String],

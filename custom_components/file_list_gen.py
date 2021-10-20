@@ -6,6 +6,7 @@ from tfx.types.standard_artifacts import String
 from google.cloud import storage
 from absl import logging
 
+
 @component
 def FileListGen(
     outpath: OutputArtifact[String],

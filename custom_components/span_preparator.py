@@ -12,6 +12,7 @@ import random
 import gzip
 import os
 
+
 # Label-mapping.
 LABEL_DICT = {
     "airplane": 0,
