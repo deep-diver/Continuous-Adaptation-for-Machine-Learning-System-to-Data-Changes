@@ -4,7 +4,7 @@ _By [Chansung Park](https://github.com/deep-diver) and [Sayak Paul](https://gith
 
 ![](figures/overview.jpeg)
 
-MLOps system evolves according to the changes of the world, and that is usually caused by [data/concept drift](https://en.wikipedia.org/wiki/Concept_drift). This project shows how to combine two separate pipelines, one for batch prediction and the other for training to adapt to data changes. **We are currently working on a blog post to discuss our experience and the technical details of the project. Stay tuned.** We assume familiarity with basic MLOps concepts (like pipelines, data drift, batch predictions, etc.), TensorFlow, TensorFlow Extedned, and Vertex AI from the reader.
+MLOps system evolves according to the changes of the world, and that is usually caused by [data/concept drift](https://en.wikipedia.org/wiki/Concept_drift). This project shows how to combine two separate pipelines, one for batch prediction and the other for training to adapt to data changes. _**We are currently working on a blog post to discuss our experience and the technical details of the project. Stay tuned.**_ We assume familiarity with basic MLOps concepts (like pipelines, data drift, batch predictions, etc.), TensorFlow, TensorFlow Extedned, and Vertex AI from the reader.
 
 MLOps system also can be evolved when much better algorithm (i.e. state-of-the-art model) comes out. In that case, the system should apply a better algorithm to understand the existing data better. We have demonstrated such workflows in the following projects:
 
