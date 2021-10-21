@@ -1,3 +1,9 @@
+"""
+Generate a txt file formatted required by Vertex AI's Batch Prediction
+There are few options, and this component generate "file list" formatted txt.
+(https://cloud.google.com/vertex-ai/docs/predictions/batch-predictions)
+"""
+
 import tensorflow as tf
 from absl import logging
 
@@ -14,10 +20,6 @@ def FileListGen(
     output_filename: Parameter[str] = "test-images.txt",
 ):
     """
-    Generate a txt file formatted required by Vertex AI's Batch Prediction
-    There are few options, and this component generate "file list" formatted txt.
-    (https://cloud.google.com/vertex-ai/docs/predictions/batch-predictions)
-
     : param outpath: OutputArtifact to hold where output_filename will be located
              This will be used in the downstream component, BatchPredictionGen
     : param gcs_src_bucket: GCS bucket name where the list of raw data is
