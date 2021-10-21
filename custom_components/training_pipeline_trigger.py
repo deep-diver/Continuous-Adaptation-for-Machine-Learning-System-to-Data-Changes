@@ -1,3 +1,7 @@
+"""
+Component responsible for triggering a training job given a pipeline specification.
+"""
+
 import json
 
 from google.cloud import storage
@@ -18,6 +22,13 @@ def PipelineTrigger(
     project_id: Parameter[str],
     region: Parameter[str],
 ):
+    """
+    :param is_retrain: Boolean to indicate if we are retraining.
+    :param latest_span_id: Latest span id to craft training data for the model.
+    :param pipeline_spec_path: Training pipeline specification path.
+    :param project_id: GCP project id.
+    :param region: GCP region.
+    """
     if is_retrain.get_string_custom_property("result") == "False":
         # Check if the pipeline spec exists.
         storage_client = storage.Client()
