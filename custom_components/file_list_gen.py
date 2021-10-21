@@ -18,11 +18,11 @@ def FileListGen(
     There are few options, and this component generate "file list" formatted txt.
     (https://cloud.google.com/vertex-ai/docs/predictions/batch-predictions)
 
-    outpath: OutputArtifact to hold where output_filename will be located
+    : param outpath: OutputArtifact to hold where output_filename will be located
              This will be used in the downstream component, BatchPredictionGen
-    gcs_src_bucket: GCS bucket name where the list of raw data is
-    gcs_src_prefix: prefix to be added to gcs_src_bucket
-    output_filename: output filename whose content is a list of file paths of raw data
+    : param gcs_src_bucket: GCS bucket name where the list of raw data is
+    : param gcs_src_prefix: prefix to be added to gcs_src_bucket
+    : param output_filename: output filename whose content is a list of file paths of raw data
     """
     logging.info("FileListGen started")
 
