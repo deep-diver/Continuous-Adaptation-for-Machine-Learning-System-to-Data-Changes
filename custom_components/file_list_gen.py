@@ -41,7 +41,7 @@ def FileListGen(
         f"Successfully created the file list file({output_filename}) in local storage"
     )
 
-    gcs_dst = f"gs://{gcs_src_bucket}/{gcs_src_prefix}{output_filename}"
+    gcs_dst = f"{gcs_src_bucket}/{gcs_src_prefix}{output_filename}"
     tf.io.gfile.copy(output_filename, gcs_dst)
     logging.info(f"Successfully uploaded the file list ({gcs_dst})")
 
