@@ -42,7 +42,7 @@ def FileListGen(
     )
 
     gcs_dst = f"{gcs_src_bucket}/{gcs_src_prefix}{output_filename}"
-    tf.io.gfile.copy(output_filename, f"gs://{gcs_dst}")
+    tf.io.gfile.copy(output_filename, f"gs://{gcs_dst}", overwrite=True)
     logging.info(f"Successfully uploaded the file list ({gcs_dst})")
 
     outpath.value = gcs_dst
