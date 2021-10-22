@@ -28,21 +28,24 @@ def FileListGen(
     """
     logging.info("FileListGen started")
 
+    # 1. get the list of data
     gcs_src_prefix = (
         f"{gcs_src_prefix}/" if len(gcs_src_prefix) != 0 else gcs_src_prefix
     )
     img_paths = tf.io.gfile.glob(f"gs://{gcs_src_bucket}/{gcs_src_prefix}*.jpg")
     logging.info("Successfully retrieve the file(jpg) list from GCS path")
 
+    # 2. write the list of data in the expected format in Vertex AI Batch Prediction to a local file
     with open(output_filename, "w", encoding="utf-8") as f:
         f.writelines("%s\n" % img_path for img_path in img_paths)
-
     logging.info(
         f"Successfully created the file list file({output_filename}) in local storage"
     )
 
+    # 3. upload the local file to GCS location
     gcs_dst = f"{gcs_src_bucket}/{gcs_src_prefix}{output_filename}"
     tf.io.gfile.copy(output_filename, f"gs://{gcs_dst}", overwrite=True)
     logging.info(f"Successfully uploaded the file list ({gcs_dst})")
 
+    # 4. store the GCS location where the local file is
     outpath.value = gcs_dst
