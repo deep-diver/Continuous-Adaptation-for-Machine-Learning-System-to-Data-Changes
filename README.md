@@ -21,7 +21,7 @@ MLOps system also can be evolved when much better algorithm (i.e. state-of-the-a
 
 ## Custom components
 
-We developed several custom components in TFX for this project. You can find them under the `custom_components` directory.
+We developed several custom components in TFX for this project. You can find them under the [`custom_components`](https://github.com/deep-diver/Continuous-Adaptation-for-Machine-Learning-System-to-Data-Changes/tree/main/custom_components) directory.
 
 ## Checklist
 
