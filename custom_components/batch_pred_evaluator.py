@@ -1,14 +1,17 @@
-# Reference: https://bit.ly/vertex-batch
+"""
+This component evaluates the performance of a currently deployed model, and 
+the evaluation is based on the result of batch prediction on Vertex AI from the previous component.
+At the end, this component will output true or false to indicate if retraining is needed.
+Reference: https://bit.ly/vertex-batch
+"""
 
-from tfx.dsl.component.experimental.annotations import Parameter
-from tfx.dsl.component.experimental.annotations import OutputArtifact
+from tfx.dsl.component.experimental.annotations import Parameter, OutputArtifact
 from tfx.dsl.component.experimental.decorators import component
 from tfx.types.experimental.simple_artifacts import Dataset
 
 from absl import logging
 import os
 import json
-
 
 @component
 def PerformanceEvaluator(
@@ -17,6 +20,17 @@ def PerformanceEvaluator(
     threshold: Parameter[float],
     trigger_pipeline: OutputArtifact[Dataset],
 ):
+    """
+     gcs_destination: GCS location where the files containing 
+                      the result of batch prediction is
+     local_directory: Temporary directory to hold files copied
+                      from the gcs_destination
+           threshold: threshold to decide if retraining is needed or not
+                      it is based on the measured accuracy
+    trigger_pipeline: an output artifact which hold true or false
+                      to indicate if retraining is needed or not
+    """
+    
     full_gcs_results_dir = f"{gcs_destination}/{local_directory}"
 
     # Create missing directories.
@@ -57,4 +71,6 @@ def PerformanceEvaluator(
 
     accuracy = num_correct / len(results)
     logging.info(f"Accuracy: {accuracy*100}%")
+    
+    # Store the boolean result.
     trigger_pipeline.set_string_custom_property("result", str(accuracy >= threshold))
