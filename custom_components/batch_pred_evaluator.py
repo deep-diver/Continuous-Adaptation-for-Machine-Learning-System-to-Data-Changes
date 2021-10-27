@@ -13,6 +13,7 @@ from absl import logging
 import os
 import json
 
+
 @component
 def PerformanceEvaluator(
     gcs_destination: Parameter[str],
@@ -21,7 +22,7 @@ def PerformanceEvaluator(
     trigger_pipeline: OutputArtifact[Dataset],
 ):
     """
-     gcs_destination: GCS location where the files containing 
+     gcs_destination: GCS location where the files containing
                       the result of batch prediction is
      local_directory: Temporary directory to hold files copied
                       from the gcs_destination
@@ -30,7 +31,7 @@ def PerformanceEvaluator(
     trigger_pipeline: an output artifact which hold true or false
                       to indicate if retraining is needed or not
     """
-    
+
     full_gcs_results_dir = f"{gcs_destination}/{local_directory}"
 
     # Create missing directories.
@@ -71,6 +72,6 @@ def PerformanceEvaluator(
 
     accuracy = num_correct / len(results)
     logging.info(f"Accuracy: {accuracy*100}%")
-    
+
     # Store the boolean result.
     trigger_pipeline.set_string_custom_property("result", str(accuracy >= threshold))
