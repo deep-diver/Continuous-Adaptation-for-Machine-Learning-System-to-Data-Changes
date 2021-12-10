@@ -11,7 +11,7 @@ We assume familiarity with basic MLOps concepts (like pipelines, data drift, bat
 MLOps system also can be evolved when much better algorithm (i.e. state-of-the-art model) comes out. In that case, the system should apply a better algorithm to understand the existing data better. We have demonstrated such workflows in the following projects:
 
 * Model Training as a CI/CD System Part1: Reflect changes in codebase to MLOps pipeline: [Code on GitHub](https://github.com/deep-diver/Model-Training-as-a-CI-CD-System), [Article on the GCP blog](https://cloud.google.com/blog/topics/developers-practitioners/model-training-cicd-system-part-i)
-* [Model Training as a CI/CD System Part2: Trigger, schedule, and run MLOps pipelines: [Code on GitHub](https://github.com/sayakpaul/CI-CD-for-Model-Training), article coming soon.
+* Model Training as a CI/CD System Part2: Trigger, schedule, and run MLOps pipelines: [Code on GitHub](https://github.com/sayakpaul/CI-CD-for-Model-Training), [Article on the GCP blog](https://cloud.google.com/blog/topics/developers-practitioners/model-training-cicd-system-part-ii)
 
 ## Workflow
 
