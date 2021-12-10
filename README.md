@@ -1,4 +1,4 @@
-# Continuous Adaptation for Machine Learning System to Data Changes
+# Continuous Adaptation for Machine Learning System to Data Changes ([#TFCommunitySpotlight Awarded](https://twitter.com/TensorFlow/status/1469019016782041095?s=20))
 
 _By [Chansung Park](https://github.com/deep-diver) and [Sayak Paul](https://github.com/sayakpaul)_
 
